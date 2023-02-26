@@ -1,0 +1,2 @@
+# API_de_criacao_de_queestoes_com_ChatGPT_DotNet
+ 
