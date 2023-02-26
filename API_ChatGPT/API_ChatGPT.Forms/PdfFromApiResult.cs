@@ -26,6 +26,8 @@ public partial class PdfFromApiResult : Form
         this.buttonPost.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonPost.Width, buttonPost.Height, 20, 20));
         this.buttonView.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, buttonView.Width, buttonView.Height, 20, 20));
         this.textBoxContent.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBoxContent.Width, textBoxContent.Height, 20, 20));
+        this.textBoxApiKey.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBoxApiKey.Width, textBoxApiKey.Height, 10, 10));
+        this.printPreviewControl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, printPreviewControl.Width, printPreviewControl.Height, 20, 20));
     }
 
     private void buttonPost_Click(object sender, EventArgs e)
@@ -48,14 +50,24 @@ public partial class PdfFromApiResult : Form
         try
         {
             if (String.IsNullOrWhiteSpace(this.textBoxContent.Text))
+                throw new Exception("É necessário que haja uma chave API à ser utilizada.");
+            if (String.IsNullOrWhiteSpace(this.textBoxContent.Text))
                 throw new Exception("É necessário que haja um conteúdo dentro da caixa de texto.");
 
             this.UseWaitCursor = true;
-            string? response = await _apiService.RequestResult(this.textBoxContent.Text);
+            string? response = await _apiService.RequestResult(this.textBoxContent.Text, this.textBoxApiKey.Text);
             this.UseWaitCursor = false;
 
             if (response == null)
                 throw new Exception("A requisição foi mal sucedida, tente novamente mais tarde.");
+
+            if (MessageBox.Show(response, "Deseja editar a questão?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                using var form = new EditQuestion();
+                form.textBox.Text = response;
+                if (form.ShowDialog() == DialogResult.OK)
+                    response = form.textBox.Text;
+            }
 
             _document = new()
             {

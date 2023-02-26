@@ -32,3 +32,4 @@ C:\Users\MulinhaGPlays\Documents\GitHub\API_de_criacao_de_queestoes_com_ChatGPT_
 C:\Users\MulinhaGPlays\Documents\GitHub\API_de_criacao_de_queestoes_com_ChatGPT_DotNet\API_ChatGPT\API_ChatGPT.Forms\obj\Debug\net7.0-windows\API_ChatGPT.Forms.pdb
 C:\Users\MulinhaGPlays\Documents\GitHub\API_de_criacao_de_queestoes_com_ChatGPT_DotNet\API_ChatGPT\API_ChatGPT.Forms\obj\Debug\net7.0-windows\API_ChatGPT.Forms.genruntimeconfig.cache
 C:\Users\MulinhaGPlays\Documents\GitHub\API_de_criacao_de_queestoes_com_ChatGPT_DotNet\API_ChatGPT\API_ChatGPT.Forms\obj\Debug\net7.0-windows\ref\API_ChatGPT.Forms.dll
+C:\Users\MulinhaGPlays\Documents\GitHub\API_de_criacao_de_queestoes_com_ChatGPT_DotNet\API_ChatGPT\API_ChatGPT.Forms\obj\Debug\net7.0-windows\API_ChatGPT.Forms.EditQuestion.resources

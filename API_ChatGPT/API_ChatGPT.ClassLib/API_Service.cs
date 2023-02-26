@@ -7,13 +7,11 @@ namespace API_ChatGPT.ClassLib;
 
 public class API_Service
 {
-    public async Task<string?> RequestResult(string text)
+    public async Task<string?> RequestResult(string text, string apiKey)
     {
-        const string API_KEY = "CHAVE_API";
-
         var openAiService = new OpenAIService(new OpenAiOptions()
         {
-            ApiKey = API_KEY
+            ApiKey = apiKey
         });
 
         var completionResult = await openAiService.Completions.CreateCompletion(new CompletionCreateRequest()

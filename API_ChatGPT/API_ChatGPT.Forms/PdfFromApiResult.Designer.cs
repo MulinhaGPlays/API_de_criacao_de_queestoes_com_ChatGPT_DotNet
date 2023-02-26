@@ -32,8 +32,10 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.textBoxContent = new System.Windows.Forms.TextBox();
             this.printPreviewControl = new System.Windows.Forms.PrintPreviewControl();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTitleText = new System.Windows.Forms.Label();
             this.buttonView = new System.Windows.Forms.Button();
+            this.labelTitleApi = new System.Windows.Forms.Label();
+            this.textBoxApiKey = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonPost
@@ -54,17 +56,17 @@
             // 
             // printPreviewControl
             // 
-            resources.ApplyResources(this.printPreviewControl, "printPreviewControl");
             this.printPreviewControl.AutoZoom = false;
             this.printPreviewControl.BackColor = System.Drawing.Color.Maroon;
+            resources.ApplyResources(this.printPreviewControl, "printPreviewControl");
             this.printPreviewControl.Name = "printPreviewControl";
             this.printPreviewControl.Zoom = 1D;
             // 
-            // label1
+            // labelTitleText
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.labelTitleText, "labelTitleText");
+            this.labelTitleText.ForeColor = System.Drawing.Color.White;
+            this.labelTitleText.Name = "labelTitleText";
             // 
             // buttonView
             // 
@@ -75,13 +77,28 @@
             this.buttonView.UseVisualStyleBackColor = false;
             this.buttonView.Click += new System.EventHandler(this.buttonView_Click);
             // 
+            // labelTitleApi
+            // 
+            resources.ApplyResources(this.labelTitleApi, "labelTitleApi");
+            this.labelTitleApi.ForeColor = System.Drawing.Color.White;
+            this.labelTitleApi.Name = "labelTitleApi";
+            // 
+            // textBoxApiKey
+            // 
+            this.textBoxApiKey.BackColor = System.Drawing.Color.LightCoral;
+            this.textBoxApiKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.textBoxApiKey, "textBoxApiKey");
+            this.textBoxApiKey.Name = "textBoxApiKey";
+            // 
             // PdfFromApiResult
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Brown;
+            this.Controls.Add(this.labelTitleApi);
+            this.Controls.Add(this.textBoxApiKey);
             this.Controls.Add(this.buttonView);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelTitleText);
             this.Controls.Add(this.printPreviewControl);
             this.Controls.Add(this.textBoxContent);
             this.Controls.Add(this.buttonPost);
@@ -97,7 +114,9 @@
         private Button buttonPost;
         private TextBox textBoxContent;
         private PrintPreviewControl printPreviewControl;
-        private Label label1;
+        private Label labelTitleText;
         private Button buttonView;
+        private Label labelTitleApi;
+        private TextBox textBoxApiKey;
     }
 }
